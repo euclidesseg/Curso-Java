@@ -19,6 +19,7 @@ public class Main {
             4.  Extra: representár el número de estudiantes por cada rango de calificaciones
           */
 
+        //float[] calificaciones = new float[30];
         float[] calificaciones = new float[30];
         float media = 0f;
         int contador_calificaciones = 0;
@@ -39,6 +40,19 @@ public class Main {
         media = (suma_califiaciones/contador_calificaciones);
         System.out.println("\n La media de las calificaciones es " + media);
 
-        
+        for(int i = 0; i < calificaciones.length - 1; i ++){
+            for (int j = 0; j<(calificaciones.length - 1 - i); j ++){
+                if(calificaciones[j] > calificaciones[j+1]){
+                    float aux = calificaciones[j];
+                    calificaciones[j] = calificaciones [j + 1];
+                    calificaciones[j+1] = aux;
+                }
+            }
+
+        }
+
+        for (double calificacion : calificaciones){
+            System.out.print((int) calificacion + " ");
+        }
     }
 }
