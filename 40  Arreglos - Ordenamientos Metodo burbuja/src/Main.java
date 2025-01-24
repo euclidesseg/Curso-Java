@@ -13,7 +13,9 @@ public class Main {
         }
         System.out.println();
 
+        // Bucle externo: iteración a través del arreglo completo
         for (int i = 0; i < numeros.length -1; i++){
+            // Bucle interno: compara elementos adyacentes
             for(int j = 0; j < numeros.length -1; j ++){
                 if(numeros[j] > numeros[j+1]){
                     int aux = numeros[j];
@@ -27,3 +29,39 @@ public class Main {
         }
     }
 }
+
+
+// Como se comporta el metodo?
+/*
+Primera iteracion bucle interno
+j = 0
+{45,37,8,17,23,39}
+{37,45,8,17,23,39}
+j ++
+
+Segunda iteracion bucle interno
+j = 1
+{37,45,8,17,23,39}
+{37,8,45,17,23,39}
+j ++
+
+Tercera iteracion bucle interno
+j = 2
+{37,8,45,17,23,39}
+{37,8,17,45,23,39}
+j ++
+
+Cuarta iteracion bucle interno
+j = 3
+{37,8,17,45,23,39}
+{37,8,17,23,45,39}
+j ++
+
+quinta iteracion bucle interno
+j = 4
+{37,8,17,23,45,39}
+{37,8,17,23,39,45}
+j ++
+
+Seguido aumenta en 1 el indice i del bucle externo y se repite el bucle interno
+* */
