@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Vector;
+
 public class Main {
     public static void main(String[] args) {
          /*
@@ -21,6 +24,9 @@ public class Main {
         int suma_matriz = 0;
         int numeroMayor = 0;
         int numeroVecesRepetidasNumeroMaryor = 1;
+       ArrayList<Integer> numerosPrimos = new ArrayList<>();
+       ArrayList<Integer> numerosPares = new ArrayList<>();
+       int sumaDiagonalPrincipalUno = 0;
 
         for (int i = 0; i < nFilas; i++) {
             for (int j = 0; j < nColumnas; j++) {
@@ -49,14 +55,60 @@ public class Main {
             for (int j = 0; j < nColumnas; j++) {
                 if (numeroMayor < matriz[i][j]){
                     numeroMayor = matriz[i][j];
+                    numeroVecesRepetidasNumeroMaryor = 1;
                 }else if(numeroMayor == matriz[i][j]){
                     numeroVecesRepetidasNumeroMaryor ++;
                 }
             }
         }
 
+        // Calcular numeros primos
+        for (int i = 0; i < nFilas; i++) {
+            for (int j = 0; j < nColumnas; j++) {
+                if(Main.esPrimo(matriz[i][j]) == true){
+                    numerosPrimos.add(matriz[i][j]);
+                }
+            }
+        }
+
+        //Calcular numeros pares
+        for (int i = 0; i < nFilas; i++) {
+            for (int j = 0; j < nColumnas; j++) {
+                if(matriz[i][j] % 2 == 0){
+                    numerosPares.add(matriz[i][j]);
+                }
+            }
+        }
+
+        // Calcular suma de las diagonales
+        for (int i = 0; i < nFilas; i++) {
+            for (int j = -1; j <= nColumnas; j++) {
+                 sumaDiagonalPrincipalUno += matriz[i][j + 1];
+            }
+        }
+
         System.out.println("El numero mayor es: " +  numeroMayor);
         System.out.println("Se repite: " +  numeroVecesRepetidasNumeroMaryor +  " veces");
+        System.out.println("Los numeros primos son " + numerosPrimos);
+        System.out.println("Los numeros pares son " + numerosPares);
+        System.out.println("Suma diagonal principal uno es: " + suma_matriz);
 
+    }
+    public static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false; // Los números menores o iguales a 1 no son primos.
+        }
+        if (numero == 2) {
+            return true; // El número 2 es primo.
+        }
+        if (numero % 2 == 0) {
+            return false; // Los números pares mayores a 2 no son primos.
+        }
+        for (int i = 3; i <= Math.sqrt(numero); i += 2) { // Verificamos solo divisores impares.
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
