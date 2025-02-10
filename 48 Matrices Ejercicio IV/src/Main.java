@@ -30,7 +30,7 @@ public class Main {
 
         for (int i = 0; i < nFilas; i++) {
             for (int j = 0; j < nColumnas; j++) {
-                matriz[i][j] = (int) (Math.random() * 100 ) +1;
+                matriz[i][j] = (int) (Math.random() * 10 ) +1;
             }
         }
         for (int i = 0; i < nFilas; i++) {
@@ -82,16 +82,17 @@ public class Main {
 
         // Calcular suma de las diagonales
         for (int i = 0; i < nFilas; i++) {
-            for (int j = -1; j <= nColumnas; j++) {
-                 sumaDiagonalPrincipalUno += matriz[i][j + 1];
+            for (int j = 0; j < nColumnas; j++) {
+                
             }
+            sumaDiagonalPrincipalUno += matriz[i][i];
         }
 
         System.out.println("El numero mayor es: " +  numeroMayor);
         System.out.println("Se repite: " +  numeroVecesRepetidasNumeroMaryor +  " veces");
         System.out.println("Los numeros primos son " + numerosPrimos);
         System.out.println("Los numeros pares son " + numerosPares);
-        System.out.println("Suma diagonal principal uno es: " + suma_matriz);
+        System.out.println("Suma diagonal principal uno es: " + sumaDiagonalPrincipalUno);
 
     }
     public static boolean esPrimo(int numero) {
