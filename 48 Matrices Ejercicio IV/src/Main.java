@@ -28,6 +28,7 @@ public class Main {
         ArrayList<Integer> numerosPares = new ArrayList<>();
         int sumaDiagonalPrincipalUno = 0;
         int sumaDiagonalPrincipalDos = 0;
+        int sumaUltimaFila = 0;
         for (int i = 0; i < nFilas; i++) {
             for (int j = 0; j < nColumnas; j++) {
                 matriz[i][j] = (int) (Math.random() * 10 ) +1;
@@ -89,6 +90,11 @@ public class Main {
         }
 
         //Mostrar en consola la suma de la la última fila.
+        for (int i = 0; i < (nColumnas); i++) {
+           sumaUltimaFila += matriz[nFilas - 1][i];
+        }
+
+        // Calcular si la matriz es cuadrado mágico
 
         System.out.println("El numero mayor es: " +  numeroMayor);
         System.out.println("Se repite: " +  numeroVecesRepetidasNumeroMaryor +  " veces");
@@ -96,6 +102,7 @@ public class Main {
         System.out.println("Los numeros pares son " + numerosPares);
         System.out.println("Suma diagonal principal uno es: " + sumaDiagonalPrincipalUno);
         System.out.println("Suma diagonal principal dos es: " + sumaDiagonalPrincipalDos);
+        System.out.println("Suma de ultima fila es es: " + sumaUltimaFila);
 
     }
     public static boolean esPrimo(int numero) {
