@@ -24,10 +24,10 @@ public class Main {
         int suma_matriz = 0;
         int numeroMayor = 0;
         int numeroVecesRepetidasNumeroMaryor = 1;
-       ArrayList<Integer> numerosPrimos = new ArrayList<>();
-       ArrayList<Integer> numerosPares = new ArrayList<>();
-       int sumaDiagonalPrincipalUno = 0;
-
+        ArrayList<Integer> numerosPrimos = new ArrayList<>();
+        ArrayList<Integer> numerosPares = new ArrayList<>();
+        int sumaDiagonalPrincipalUno = 0;
+        int sumaDiagonalPrincipalDos = 0;
         for (int i = 0; i < nFilas; i++) {
             for (int j = 0; j < nColumnas; j++) {
                 matriz[i][j] = (int) (Math.random() * 10 ) +1;
@@ -81,18 +81,21 @@ public class Main {
         }
 
         // Calcular suma de las diagonales
+        int contadorDiagonalDos = nColumnas - 1;
         for (int i = 0; i < nFilas; i++) {
-            for (int j = 0; j < nColumnas; j++) {
-                
-            }
+            sumaDiagonalPrincipalDos += matriz[i][contadorDiagonalDos];
             sumaDiagonalPrincipalUno += matriz[i][i];
+            contadorDiagonalDos --;
         }
+
+        //Mostrar en consola la suma de la la última fila.
 
         System.out.println("El numero mayor es: " +  numeroMayor);
         System.out.println("Se repite: " +  numeroVecesRepetidasNumeroMaryor +  " veces");
         System.out.println("Los numeros primos son " + numerosPrimos);
         System.out.println("Los numeros pares son " + numerosPares);
         System.out.println("Suma diagonal principal uno es: " + sumaDiagonalPrincipalUno);
+        System.out.println("Suma diagonal principal dos es: " + sumaDiagonalPrincipalDos);
 
     }
     public static boolean esPrimo(int numero) {
