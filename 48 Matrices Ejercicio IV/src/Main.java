@@ -17,10 +17,10 @@ public class Main {
             Mostrar en consola la suma de la la última fila.
             Mostrar en consola el mensaje "Cuadrado Mágico" si la matriz cataloga como un cuadrado mágico.
         * */
-        int nFilas = 5;
-        int nColumnas = 5;
+        int nFilas = 3;
+        int nColumnas = 3;
         int[][] matriz = new int[nFilas][nColumnas];
-        float primedio = 0f;
+        float promedio = 0f;
         int suma_matriz = 0;
         int numeroMayor = 0;
         int numeroVecesRepetidasNumeroMaryor = 1;
@@ -48,8 +48,8 @@ public class Main {
                 suma_matriz += matriz[i][j];
             }
         }
-        primedio = (float) suma_matriz / (nFilas * nColumnas);
-        System.out.println("El promedio de esta matriz es: " + primedio);
+        promedio = (float) suma_matriz / (nFilas * nColumnas);
+        System.out.println("El promedio de esta matriz es: " + promedio);
 
         // Mostrar el número mayor
         for (int i = 0; i < nFilas; i++) {
@@ -63,18 +63,13 @@ public class Main {
             }
         }
 
-        // Calcular numeros primos
+
+        //Calcular numeros pares y primos
         for (int i = 0; i < nFilas; i++) {
             for (int j = 0; j < nColumnas; j++) {
                 if(Main.esPrimo(matriz[i][j]) == true){
                     numerosPrimos.add(matriz[i][j]);
                 }
-            }
-        }
-
-        //Calcular numeros pares
-        for (int i = 0; i < nFilas; i++) {
-            for (int j = 0; j < nColumnas; j++) {
                 if(matriz[i][j] % 2 == 0){
                     numerosPares.add(matriz[i][j]);
                 }
@@ -95,6 +90,43 @@ public class Main {
         }
 
         // Calcular si la matriz es cuadrado mágico
+        boolean esCuadradoMagico = true;
+        int sumaReferencia = sumaDiagonalPrincipalUno;
+
+        // Verificar que todas las filas tengan la misma suma
+        for (int i = 0; i < nFilas; i++) {
+            int sumaFilas = 0;
+            for (int j = 0; j < nColumnas; j++) {
+                sumaFilas += matriz[i][j];
+            }
+            if (sumaFilas != sumaReferencia) {
+                esCuadradoMagico = false;
+                break;
+            }
+        }
+
+        // Verificar que todas las columnas tengan la misma suma
+        for (int j = 0; j < nColumnas && esCuadradoMagico; j++) { // Se detiene si ya falló antes
+            int sumaColumnas = 0;
+            for (int i = 0; i < nFilas; i++) {
+                sumaColumnas += matriz[i][j];
+            }
+            if (sumaColumnas != sumaReferencia) {
+                esCuadradoMagico = false;
+                break;
+            }
+        }
+
+        // Verificar que la segunda diagonal tenga la misma suma
+        if (sumaDiagonalPrincipalDos != sumaReferencia) {
+            esCuadradoMagico = false;
+        }
+
+        if (esCuadradoMagico) {
+            System.out.println("Es un cuadrado mágico");
+        } else {
+            System.out.println("No es un cuadrado mágico");
+        }
 
         System.out.println("El numero mayor es: " +  numeroMayor);
         System.out.println("Se repite: " +  numeroVecesRepetidasNumeroMaryor +  " veces");
@@ -103,6 +135,12 @@ public class Main {
         System.out.println("Suma diagonal principal uno es: " + sumaDiagonalPrincipalUno);
         System.out.println("Suma diagonal principal dos es: " + sumaDiagonalPrincipalDos);
         System.out.println("Suma de ultima fila es es: " + sumaUltimaFila);
+
+        if(esCuadradoMagico){
+            System.out.println("Es cuadrado mágico");
+        }else {
+            System.out.println("No es cuadrado mágico");
+        }
 
     }
     public static boolean esPrimo(int numero) {
