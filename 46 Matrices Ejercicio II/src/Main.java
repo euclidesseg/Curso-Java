@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* Crear y llenar una matriz 3 x 3 transponerla y mostrarla
-        *
+        /*  Crear y llenar una matriz 3 x 3 transponerla y mostrarla.
+            La matriz traspuesta de una matriz A es aquella que se obtiene
+            al cambiar las filas por las columnas de la matriz original
+
         * */
 
         int [][] matriz = new int[3][3];
