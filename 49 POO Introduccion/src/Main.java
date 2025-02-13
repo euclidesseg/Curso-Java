@@ -14,7 +14,8 @@ public class Main {
             y a las funciones METODOS
 
             Las PROPIEDADES son las caracteristicas o atributos que definen al objeto
-            y los METODOS son las acciones que puede realizar
+            y los METODOS tambien conocidos como comportamiento de los objetos
+            son las acciones que puede realizar un objeto.
 
             Por ejemplo para una tasa, las propiedades pueden ser
             .volumen
