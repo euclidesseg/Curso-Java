@@ -62,6 +62,7 @@ public class Operacion {
     Operacion operacion;
     public Operacion(Operacion operacion){
         this.operacion = operacion;
+        System.out.println("Soy el constructor que recibe una instancia de mi clase");
     }
     public void crearAuxiliar(){
         Operacion operacion1 = new Operacion(this);

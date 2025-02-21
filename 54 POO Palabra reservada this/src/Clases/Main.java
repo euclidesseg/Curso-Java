@@ -5,5 +5,6 @@ public class Main {
         Operacion operacion = new Operacion("Ejemplo1", "Ejemplo2");
         operacion.enviar();
 
+        Operacion operacion2 = new Operacion(operacion);
     }
 }
