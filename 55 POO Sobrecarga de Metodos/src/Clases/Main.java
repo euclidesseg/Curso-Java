@@ -10,9 +10,10 @@ public class Main {
 
         Persona persona2 = new Persona("11324657812");
         persona2.correr(12);
+        System.out.println(persona2.nombre);
         System.out.println(persona2.mostrarDatos());
     }
-    // Cada objeto tiene su propia copia de los atributos de la clase
+    // Cada objeto tiene su propia copia de los atributos no estaticos de la clase
     /*  el constructor que se usa en cada caso determina la copia y por ende
         qué atributos se inicializan y cuales no.
 
