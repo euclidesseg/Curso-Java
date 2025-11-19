@@ -16,6 +16,6 @@ public class Desarrollador extends Empleado {
 
     @Override
     public double calcularSalario() {
-        return 0;
+        return this.getSalarioBase();
     }
 }

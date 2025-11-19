@@ -14,7 +14,7 @@ public abstract class Empleado {
     public abstract double calcularSalario();
 
     public String mostrarInformacion(){
-        return "Nombre: " + this.nombre + "\nIdentificados: "+ this.id;
+        return "Nombre: " + this.nombre + "\nIdentificación: "+ this.id;
     }
     public String getNombre(){
         return this.nombre;

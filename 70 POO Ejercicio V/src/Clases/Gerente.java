@@ -6,14 +6,18 @@ public class Gerente extends Empleado{
     private String id;
     private double salarioBase;
     private int personas;
+    private double bonificacion;
 
-    public Gerente (String nombre, String id, double salarioBase, int personas){
+    public Gerente (String nombre, String id, double salarioBase, int personas, double bonificacion){
         super(nombre, id, salarioBase);
         this.personas = personas;
+        this.bonificacion = bonificacion;
     }
 
     @Override
     public double calcularSalario() {
-        return 0;
+        double salarioNet = this.getSalarioBase();
+        double salarioTotal = salarioNet + this.bonificacion;
+        return  salarioTotal;
     }
 }
