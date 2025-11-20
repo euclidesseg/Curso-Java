@@ -12,8 +12,13 @@ public class Designer extends Empleado{
         this.herramienta = herramienta;
     }
 
+
     @Override
     public double calcularSalario() {
        return getSalarioBase();
+    }
+    @Override
+    public String toString(){
+        return "Diseñador: " + super.toString() + "\nSalario: "+ this.calcularSalario() + "\nHerramienta: " + this.herramienta;
     }
 }

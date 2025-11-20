@@ -14,10 +14,16 @@ public class Gerente extends Empleado{
         this.bonificacion = bonificacion;
     }
 
+
+
     @Override
     public double calcularSalario() {
         double salarioNet = this.getSalarioBase();
         double salarioTotal = salarioNet + this.bonificacion;
         return  salarioTotal;
+    }
+    @Override
+    public String toString() {
+        return "Gerente: "+ super.toString() + "\nSalario: " + this.calcularSalario() + "\nPersonas a cargo: " + this.personas;
     }
 }

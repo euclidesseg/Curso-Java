@@ -11,11 +11,14 @@ public abstract class Empleado {
         this.salarioBase = salarioBase;
     }
 
+
     public abstract double calcularSalario();
 
-    public String mostrarInformacion(){
-        return "Nombre: " + this.nombre + "\nIdentificación: "+ this.id;
+    @Override
+    public String toString(){
+        return this.nombre + "\nIdentificación: "+ this.id;
     }
+
     public String getNombre(){
         return this.nombre;
     }

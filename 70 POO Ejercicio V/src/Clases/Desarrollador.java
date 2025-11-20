@@ -18,4 +18,9 @@ public class Desarrollador extends Empleado {
     public double calcularSalario() {
         return this.getSalarioBase();
     }
+
+    @Override
+    public String toString() {
+        return "Desarrollador: " + super.toString() +"\nSalario: "+  this.calcularSalario() + "\nLenguaje "+ this.lenguaje;
+    }
 }
