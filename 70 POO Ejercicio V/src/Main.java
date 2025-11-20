@@ -1,3 +1,4 @@
+import Clases.Desarrollador;
 import Clases.Designer;
 import Clases.Empleado;
 
@@ -10,7 +11,10 @@ public class Main {
         Empleado empleados [] = new Empleado[9];
 
         Designer disenador = new Designer("Abraham","100", 2000,"Photoshop");
+        Desarrollador desarrollador = new Desarrollador("Euclides", "101",320000,3,"java");
 
-       System.out.print(disenador.mostrarInformacion());
+        System.out.print(disenador.mostrarInformacion());
+        System.out.print(desarrollador.mostrarInformacion());
+
     }
 }
