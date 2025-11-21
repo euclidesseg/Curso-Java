@@ -2,9 +2,6 @@ package Clases;
 
 public class Desarrollador extends Empleado {
 
-    private String nombre;
-    private String id;
-    private double salarioBase;
     private int years;
     private String lenguaje;
 
@@ -16,11 +13,11 @@ public class Desarrollador extends Empleado {
 
     @Override
     public double calcularSalario() {
-        return this.getSalarioBase();
+        return this.getSalarioBase() + (this.getSalarioBase() * 0.05);
     }
 
     @Override
     public String toString() {
-        return "Desarrollador: " + super.toString() +"\nSalario: "+  this.calcularSalario() + "\nLenguaje "+ this.lenguaje;
+        return "Desarrollador: " + super.toString() +"\nLenguaje "+ this.lenguaje;
     }
 }

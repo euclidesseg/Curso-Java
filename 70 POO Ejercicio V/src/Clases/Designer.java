@@ -2,9 +2,6 @@ package Clases;
 
 public class Designer extends Empleado{
 
-    private String nombre;
-    private String id;
-    private double salarioBase;
     private String herramienta;
 
     public Designer (String nombre, String id, double salarioBase, String herramienta){
@@ -15,10 +12,10 @@ public class Designer extends Empleado{
 
     @Override
     public double calcularSalario() {
-       return getSalarioBase();
+        return this.getSalarioBase() + (this.getSalarioBase() * 0.03);
     }
     @Override
     public String toString(){
-        return "Diseñador: " + super.toString() + "\nSalario: "+ this.calcularSalario() + "\nHerramienta: " + this.herramienta;
+        return "Diseñador: " + super.toString() + "\nHerramienta: " + this.herramienta;
     }
 }
